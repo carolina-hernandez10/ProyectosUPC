@@ -436,16 +436,16 @@
             },
             "vertices": [
               {
-                "x": 560,
-                "y": 290
-              },
-              {
-                "x": 530,
+                "x": 590,
                 "y": 320
               },
               {
                 "x": 400,
                 "y": 320
+              },
+              {
+                "x": 290,
+                "y": 300
               }
             ]
           },
@@ -540,94 +540,12 @@
             },
             "vertices": [
               {
-                "x": 290,
-                "y": 70
-              },
-              {
-                "x": 400,
+                "x": 310,
                 "y": 30
               },
               {
-                "x": 460,
+                "x": 510,
                 "y": 30
-              },
-              {
-                "x": 520,
-                "y": 50
-              },
-              {
-                "x": 540,
-                "y": 50
-              },
-              {
-                "x": 560,
-                "y": 70
-              },
-              {
-                "x": 590,
-                "y": 110
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "DB Request",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": true,
-              "isPublicNetwork": false,
-              "protocol": "SSL",
-              "threats": []
-            },
-            "labels": [
-              "DB Request"
-            ],
-            "id": "680c1569-f108-4fc7-89a4-b2d0aae9bf15",
-            "source": {
-              "x": 630,
-              "y": 160
-            },
-            "target": {
-              "cell": "77be03f5-461b-4778-becb-776bcc458755",
-              "port": "b7555aa4-7862-4bdd-8da5-f21e617de992"
-            },
-            "vertices": [
-              {
-                "x": 690,
-                "y": 110
-              },
-              {
-                "x": 730,
-                "y": 90
-              },
-              {
-                "x": 830,
-                "y": 110
-              },
-              {
-                "x": 840,
-                "y": 140
               }
             ]
           },
@@ -667,8 +585,8 @@
             ],
             "id": "b86d1dd1-322f-4bd7-ba40-54681785886c",
             "source": {
-              "x": 620,
-              "y": 220
+              "cell": "952789cc-57e9-4224-abbb-0f417275ede4",
+              "port": "cb123686-1225-4f96-9e46-585587a6e793"
             },
             "target": {
               "cell": "77be03f5-461b-4778-becb-776bcc458755",
@@ -676,14 +594,80 @@
             },
             "vertices": [
               {
+                "x": 680,
+                "y": 290
+              },
+              {
+                "x": 930,
+                "y": 290
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "DB Request",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": false,
+              "protocol": "SSL",
+              "threats": []
+            },
+            "labels": [
+              "DB Request"
+            ],
+            "id": "680c1569-f108-4fc7-89a4-b2d0aae9bf15",
+            "source": {
+              "cell": "952789cc-57e9-4224-abbb-0f417275ede4",
+              "port": "4821707c-289b-4851-9cbc-39048c805e2d"
+            },
+            "target": {
+              "cell": "77be03f5-461b-4778-becb-776bcc458755",
+              "port": "b7555aa4-7862-4bdd-8da5-f21e617de992"
+            },
+            "vertices": [
+              {
+                "x": 650,
+                "y": 90
+              },
+              {
                 "x": 750,
-                "y": 270
+                "y": 70
+              },
+              {
+                "x": 860,
+                "y": 70
+              },
+              {
+                "x": 950,
+                "y": 100
               }
             ]
           },
           {
             "position": {
-              "x": 820,
+              "x": 920,
               "y": 160
             },
             "size": {
@@ -847,7 +831,7 @@
                   "severity": "High",
                   "type": "Information disclosure",
                   "description": "See OWASP Automated Threat #7:\nBrute force, dictionary and guessing attacks used against authentication processes of the application to identify valid account credentials",
-                  "mitigation": "Defences include restriction of excessive authentication attempts, control of interaction frequency and enforcement of a single unique action",
+                  "mitigation": "Defences include restriction of excessive authentication attempts, control of interaction frequency and enforcement of a single unique action\n- Add rate limit login form\n- Implement strong password policy",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 20,
@@ -922,16 +906,9 @@
               "threatFrequency": {
                 "tampering": 1,
                 "repudiation": 0,
-                "informationDisclosure": 3,
+                "informationDisclosure": 4,
                 "denialOfService": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           }
         ],
