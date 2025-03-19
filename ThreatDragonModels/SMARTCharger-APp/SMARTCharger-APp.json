@@ -314,38 +314,6 @@
             }
           },
           {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Internet",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              "Internet"
-            ],
-            "id": "c69f2b96-15f9-4e75-a929-c96d55fcbad7",
-            "source": {
-              "x": 330,
-              "y": 50
-            },
-            "target": {
-              "x": 290,
-              "y": 320
-            },
-            "vertices": [
-              {
-                "x": 370,
-                "y": 170
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -662,6 +630,38 @@
               {
                 "x": 950,
                 "y": 100
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Internet",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Internet"
+            ],
+            "id": "c69f2b96-15f9-4e75-a929-c96d55fcbad7",
+            "source": {
+              "x": 310,
+              "y": 10
+            },
+            "target": {
+              "x": 270,
+              "y": 340
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 190
               }
             ]
           },
