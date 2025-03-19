@@ -38,6 +38,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -121,7 +122,6 @@
               ]
             },
             "id": "952789cc-57e9-4224-abbb-0f417275ede4",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "Web App",
@@ -218,6 +218,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -301,7 +302,6 @@
               ]
             },
             "id": "dfb5f241-104a-4559-b7a2-222b551322ae",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "Clientes",
@@ -688,6 +688,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -771,7 +772,6 @@
               ]
             },
             "id": "77be03f5-461b-4778-becb-776bcc458755",
-            "zIndex": 11,
             "data": {
               "type": "tm.Store",
               "name": "Store",
