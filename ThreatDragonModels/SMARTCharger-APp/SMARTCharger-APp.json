@@ -195,13 +195,6 @@
                 "denialOfService": 0,
                 "elevationOfPrivilege": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -321,114 +314,6 @@
             }
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "HTTP Response",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": true,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "HTTP Response"
-            ],
-            "id": "fb388f79-c0a3-4685-9842-d5e28821b891",
-            "source": {
-              "x": 620,
-              "y": 220
-            },
-            "target": {
-              "cell": "dfb5f241-104a-4559-b7a2-222b551322ae",
-              "port": "277a31da-94c2-4cba-ae37-b2f46359d783"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 290
-              },
-              {
-                "x": 480,
-                "y": 320
-              },
-              {
-                "x": 400,
-                "y": 320
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "HTTP Request",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": true,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "HTTP Request"
-            ],
-            "id": "f2130ed8-5ae2-4b68-9f32-6831d240545d",
-            "source": {
-              "cell": "dfb5f241-104a-4559-b7a2-222b551322ae",
-              "port": "27944f6c-bd32-472f-b4fb-a4b46f08ac74"
-            },
-            "target": {
-              "cell": "952789cc-57e9-4224-abbb-0f417275ede4",
-              "port": "4821707c-289b-4851-9cbc-39048c805e2d"
-            },
-            "vertices": [
-              {
-                "x": 460,
-                "y": 50
-              }
-            ]
-          },
-          {
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
@@ -459,6 +344,230 @@
                 "y": 170
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTP Response",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [
+                {
+                  "id": "c14c4a12-8fda-48fc-b22e-f5aef0260ecb",
+                  "title": "Use encryption",
+                  "status": "Mitigated",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Unencrypted data sent over a public network may be intercepted and read by an attacker",
+                  "mitigation": "Data should be encrypted either at the message or transport level",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                },
+                {
+                  "id": "7ea6d06e-3f7e-4dba-9476-36ea73b911a8",
+                  "title": "Fingerprinting",
+                  "status": "Mitigated",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "See OWASP Automated Threat #4:\nSpecific requests are sent to the application eliciting information in order to profile the application",
+                  "mitigation": "Defence includes restricting what information is provided, for example version numbers and package details",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                },
+                {
+                  "id": "e77edded-e923-4f35-80cf-ed04bcf7e84d",
+                  "title": "Vulnerable transport protocol",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Older transport protocols are vulnerable and have known vulnerabilities",
+                  "mitigation": "Use up to date cryptography and transport protocols",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 5,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "HTTP Response"
+            ],
+            "id": "fb388f79-c0a3-4685-9842-d5e28821b891",
+            "source": {
+              "x": 620,
+              "y": 220
+            },
+            "target": {
+              "cell": "dfb5f241-104a-4559-b7a2-222b551322ae",
+              "port": "277a31da-94c2-4cba-ae37-b2f46359d783"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 290
+              },
+              {
+                "x": 530,
+                "y": 320
+              },
+              {
+                "x": 400,
+                "y": 320
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "HTTP Request",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [
+                {
+                  "id": "53b3a16c-7f5e-40da-878f-05e9b13508a7",
+                  "title": "Vulnerable transport protocol",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Older transport protocols are vulnerable and have known vulnerabilities",
+                  "mitigation": "Use up to date cryptography and transport protocols",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                },
+                {
+                  "id": "fe4cb5cb-b8c0-43d7-8f09-415df2881327",
+                  "title": "Fingerprinting",
+                  "status": "Mitigated",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "See OWASP Automated Threat #4:\nSpecific requests are sent to the application eliciting information in order to profile the application",
+                  "mitigation": "Defence includes restricting what information is provided, for example version numbers and package details",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "e18e3909-bc70-4751-90c1-6d92bb7198c7",
+                  "title": "Use encryption",
+                  "status": "Mitigated",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Unencrypted data sent over a public network may be intercepted and read by an attacker",
+                  "mitigation": "Data should be encrypted either at the message or transport level",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 6,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "HTTP Request"
+            ],
+            "id": "f2130ed8-5ae2-4b68-9f32-6831d240545d",
+            "source": {
+              "cell": "dfb5f241-104a-4559-b7a2-222b551322ae",
+              "port": "27944f6c-bd32-472f-b4fb-a4b46f08ac74"
+            },
+            "target": {
+              "cell": "952789cc-57e9-4224-abbb-0f417275ede4",
+              "port": "4821707c-289b-4851-9cbc-39048c805e2d"
+            },
+            "vertices": [
+              {
+                "x": 380,
+                "y": 50
+              },
+              {
+                "x": 400,
+                "y": 30
+              },
+              {
+                "x": 460,
+                "y": 30
+              },
+              {
+                "x": 520,
+                "y": 50
+              },
+              {
+                "x": 530,
+                "y": 50
+              },
+              {
+                "x": 590,
+                "y": 110
+              },
+              {
+                "x": 590,
+                "y": 130
+              }
+            ]
           }
         ],
         "description": "STRIDE Amenazas"
@@ -466,6 +575,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Marc Catrisse",
-    "threatTop": 5
+    "threatTop": 16
   }
 }
